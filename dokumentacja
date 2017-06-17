@@ -1,0 +1,30 @@
+1.Kompilacja
+Projekt korzysta z biblioteki gtk/gtk.h oraz kilku bibliotek standardowych języka C - stdlib, math, stdbool, string, unistd. Kompilowane w Code::Blocksie.
+2.Dokumentacja gry MEMORY GAME
+Gra oferuje dwa typy rozgrywki: jeden gracz oraz dwóch graczy. Poniżej znajduje się dokładny opis obu trybów.
+a.)Jeden gracz: Użytkownik wybiera poziom rozgrywki, następnie jeden z kilku/kilkunastu ponumerowanych poziomów w obrębie poziomu trudności. Poziomy łatwy/normalny/trudny różnią się rozmiarem planszy (odpowiednio: 4x4/6x6/8x8), ponumerowane poziomy odpowiadają za czas, który użytkownik dostaje na przejście planszy. Po prawej stronie wyświetlany jest licznik czasu oraz informacja, ile par zostało na planszy. Po ukończeniu wyświetla się informacja o wygranej (zdjęcie wszystkich kafelków) lub przegranej (koniec czasu) grze. Single player obsługuje dynamiczny zapis, zapisujący stan planszy co sekundę. Grę można później wczytać po naciśnięciu przycisku "Jeden gracz"
+b.)Dwóch graczy: Użytkownik podaje imię gracza pierwszego oraz drugiego. Multiplayer obsługuje planszę 8x8. Po prawej stronie ekranu wyświetlana jest informacja, ile par pozostało do ukończenia rozgrywki, licznik punktów obu graczy oraz tekst mówiący, kto powinien wykonywać kolejny ruch. Po ukończeniu gry wyświetlane jest okienko informujące, kto wygrał grę. Grę w tym trybie można zapisać w każdej chwili, naciskając przycisk "Zapisz" u dołu ekranu.
+Jeśli stan gry dla danego trybu jest zapisany, można wczytać grę po wejściu do niego. W przeciwnym razie przycisk "Wczytaj" jest zablokowany.
+Gra dostosowana jest do standardowego linuxowego rozmiaru czcionki. Rozmiar okna jest stały i wynosi 1920x1080. Ustawienie większego rozmiaru czcionki może powodować błędne ustawienie widgetów na planszy.
+3.Struktury danych oraz funkcje
+Plik interface.c odpowiada za wyświetlenie menu głównego oraz wszystkich związanych z nim przycisków i kontrolek. Pliki z zakończeniem *_menu.c reprezentują wyświetlenie menu dla trybu gry *. Plik multiplayer.c to menu dla trybu multiplayer. Plik single_player.c to menu dla trybu single player. Pliki z zakończeniem *_mode.c reprezentują planszę oraz warstwę logiczną gry. W plikach universal.c oraz universal-p.c znajdują się funkcje uniwersalne dla różnych trybów gry odpowiednio w menu i w planszy.
+Program używa dwóch zdefiniowanych struktur. Struktura rysowanie zawiera wszystkie potrzebne informacje o kafelku oraz o planszy. Poniżej znajduje się opis składników:
+-n - rozmiar planszy nxn
+-pozycja - pozycja kafelka w tablicy
+-kafelek - button, będący właściwym kafelkiem
+-rewers - skórka przycisku
+-awers - obrazki, po których rozpoznawane są kafelki
+-name - imię pierwszego gracza w labelu
+-name_second - imię drugiego gracza w labelu (tylko w trybie multiplayer)
+-rewers_adres - adres skórki
+-awers_adres - adres obrazka
+-pierwszy_gracz - imię pierwszego gracza w tablicy
+-drugi_gracz - imię drugiego gracza w tablicy
+-sekundy - liczba sekund, które gracz dostaje na ukończenie poziomu
+-numer_obrazka - numer awersu w tablicy stringów
+-istnieje_licznik - informacja, czy licznik istnieje. Pierwotnie zawiera wartość 1, która zmienia się w 0, kiedy licznik dojdzie do zera, wyłączając go
+-tryb_gry - numer odpowiadający trybowi gry. 0 - single łatwy, 1 - single normalny, 2 - single trudny, 3 - multiplayer
+-control_timer - zmienna przechowująca wartość zwracaną przez licznik
+
+Struktura odsloniete jest strukturą wewnętrzną, zdefiniowaną na potrzeby funkcji invert, która odsłania kafelki oraz sprawdza, czy należy je zlikwidować, czy też zasłonić. Zawiera informacje o dwóch kafelkach takie, jak: adres w pamięci, pozycja w tablicy, numer awersu w tablicy stringów.
+W trybie dwóch graczy licznik przechowywany jest w dwuelementowej tablicy. Wartość jednego z elementów zwiększa się w momencie poprawnego odsłonięcia dwóch kafelków. W przypadku niepoprawnego odsłonięcia dwóch kafelków, inkrementowany jest licznik reprezentujący indeks tej tablicy. Odwołanie do obu indeksów następuje przez operację licznik%2. Funkcja draw_map rysuje mapę kafelków dla wszystkich trybów gry, ale każdy z nich posiada osobną planszę, wskazującą stan gry.

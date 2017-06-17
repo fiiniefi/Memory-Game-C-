@@ -1,0 +1,57 @@
+GtkWindow {
+background-image: url("img/tlo.jpg");
+}
+
+#main_menu_button {
+background-image: url("img/button_skin.png");
+background-position: center;
+color: black;
+font-family: "Georgia";
+font-size: 200%;
+font-weight: bold;
+text-shadow: 1px 1px #AB2929;
+}
+
+#level_button {
+background-image: url("img/level.jpg");
+background-position: center;
+color: black;
+font-family: "Impact";
+font-size: 700%;
+font-weight: bold;
+text-shadow: 1px 1px #AB2929;
+}
+
+#game_button {
+background-image: url("img/ingame.jpg");
+background-position: center;
+}
+
+#label {
+font-family: "Impact";
+font-size: 400%;
+font-weight: bold;
+text-shadow: 1px 1px #AB2929;
+color: yellow;
+}
+
+#counts {
+background-image: url("img/interface_grid.jpg");
+background-position: center;
+}
+
+#names {
+font-family: "Impact";
+font-size: 200%;
+font-weight: bold;
+text-shadow: 1px 1px #AB2929;
+color: black;
+}
+
+#secs {
+font-family: "Impact";
+font-size: 300%;
+font-weight: bold;
+text-shadow: 1px 1px #AB2929;
+color: black;
+}

@@ -130,6 +130,7 @@ GtkWidget *twelfth_hard_button();
 GtkWidget *return_level_button();
 void first_player_nickname(GtkWidget *widget, prysowanie data);
 void second_player_nickname(GtkWidget *widget, prysowanie data);
+GtkWidget *credits_label();
 /***************universal.c***************/
 
 

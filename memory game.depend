@@ -3,7 +3,7 @@
 	<gtk/gtk.h>
 	"interface.h"
 
-1486485127 source:/home/marcin/memory game/interface.c
+1498390733 source:/home/marcin/memory game/interface.c
 	<gtk/gtk.h>
 	"interface.h"
 
@@ -2570,7 +2570,7 @@
 1435720459 /usr/include/gtk-3.0/gtk/deprecated/gtkvseparator.h
 	<gtk/gtkseparator.h>
 
-1487792188 /home/marcin/memory game/interface.h
+1498390377 /home/marcin/memory game/interface.h
 	<gtk/gtk.h>
 	<stdbool.h>
 
@@ -2598,7 +2598,7 @@
 	<stdlib.h>
 	"interface.h"
 
-1487070009 source:/home/marcin/memory game/universal.c
+1498390657 source:/home/marcin/memory game/universal.c
 	<gtk/gtk.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -2636,7 +2636,7 @@
 
 1485976821 source:/home/marcin/memory game/kafelki.c
 
-1487792467 source:/home/marcin/memory game/multiplayer_mode.c
+1488306591 source:/home/marcin/memory game/multiplayer_mode.c
 	<gtk/gtk.h>
 	<stdlib.h>
 	<string.h>
@@ -2647,7 +2647,7 @@
 	<gtk/gtk.h>
 	"interface.h"
 
-1487792467 source:/home/marcin/memory game/single_mode.c
+1488306572 source:/home/marcin/memory game/single_mode.c
 	<gtk/gtk.h>
 	<stdlib.h>
 	"interface.h"

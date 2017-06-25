@@ -14,6 +14,15 @@ GtkWidget *return_level_button()
 }
 
 
+GtkWidget *credits_label()
+{
+    GtkWidget *credits;
+    credits=gtk_label_new("Marcin Drewniak, 2016");
+    gtk_widget_set_name(GTK_WIDGET(credits), "names");
+    return credits;
+}
+
+
 void first_player_nickname(GtkWidget *widget, prysowanie data)
 {
     gtk_window_resize(GTK_WINDOW(okno), 1200, 800);

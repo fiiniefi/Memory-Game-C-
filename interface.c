@@ -36,6 +36,7 @@ void glowne_menu()
     GtkWidget *single=single_button();
     GtkWidget *multi=multi_button();
     GtkWidget *exit=exit_button();
+    GtkWidget *credits=credits_label();
     gtk_grid_attach(GTK_GRID(siatka_na_przyciski), labeltop, 0, 0, 8, 8);
     gtk_grid_attach(GTK_GRID(siatka_na_przyciski), single, 2, 6, 4, 3);
     gtk_grid_attach(GTK_GRID(siatka_na_przyciski), labelfirst, 0, 10, 8, 1);
@@ -43,6 +44,7 @@ void glowne_menu()
     gtk_grid_attach(GTK_GRID(siatka_na_przyciski), labelsecond, 0, 15, 8, 1);
     gtk_grid_attach(GTK_GRID(siatka_na_przyciski), exit, 2, 16, 4, 3);
     gtk_grid_attach(GTK_GRID(siatka_na_przyciski), labelbottom, 0, 17, 8, 8);
+    gtk_grid_attach(GTK_GRID(siatka_na_przyciski), credits, 5, 30, 3, 2);
     /*GtkWidget *image=gtk_image_new_from_file("data/txt/img/button_skin.png");
     GtkWidget *layout=gtk_layout_new(NULL, NULL);
     GtkWidget *but=gtk_button_new();
